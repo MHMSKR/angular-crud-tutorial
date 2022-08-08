@@ -1,0 +1,32 @@
+<div class="insert-modal">
+    <h1 mat-dialog-title>กรุณากรอกข้อมูล</h1>
+    <div mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>ชื่อ</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>นามสกุล</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>วันเกิด</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>อายุ</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>เพศ</mat-label>
+            <mat-select>
+                <mat-option value="undefined">ไม่ระบุเพศ</mat-option>
+                <mat-option value="male">ชาย</mat-option>
+                <mat-option value="female">หญิง</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close>Close</button>
+    </div>
+</div>

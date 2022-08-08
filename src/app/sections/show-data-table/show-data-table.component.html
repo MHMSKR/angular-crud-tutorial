@@ -1,0 +1,76 @@
+<div class="show-data-table">
+    <table mat-table [dataSource]="this.userData" class="mat-elevation-z1" >
+
+        <!-- index -->
+        <ng-container matColumnDef="index">
+            <th mat-header-cell *matHeaderCellDef>ลำดับ</th>
+            <td mat-cell *matCellDef="let element">{{element.index}}</td>
+        </ng-container>
+
+        <!-- User Id Column -->
+        <ng-container matColumnDef="userId">
+            <th mat-header-cell *matHeaderCellDef> รหัสผู้ใช้งาน </th>
+            <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+          </ng-container>
+        
+          <!-- FirstName Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> ชื่อ-นามสกุล </th>
+            <td mat-cell *matCellDef="let element"> {{element.fname +'  '+element.lname}} </td>
+          </ng-container>
+
+          <!-- LastName Column -->
+          <ng-container matColumnDef="birthdate">
+            <th mat-header-cell *matHeaderCellDef> วันเกิด </th>
+            <td mat-cell *matCellDef="let element"> {{element.birthdate}} </td>
+          </ng-container>
+        
+          <!--  Age Column -->
+          <ng-container matColumnDef="age">
+            <th mat-header-cell *matHeaderCellDef> อายุ </th>
+            <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+          </ng-container>
+
+          <!--  Gender Column -->
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef> เพศ </th>
+            <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+          </ng-container>
+
+          
+          <!--  Gender Column -->
+          <ng-container matColumnDef="createdDate">
+            <th mat-header-cell *matHeaderCellDef> วันที่บันทึก </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdDate | date:'dd/MM/yyyy'}} </td>
+          </ng-container>
+
+          
+          <!--  Gender Column -->
+          <ng-container matColumnDef="createdBy">
+            <th mat-header-cell *matHeaderCellDef> บันทึกโดย </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdBy}} </td>
+          </ng-container>
+
+          <!--  Gender Column -->
+          <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>
+                <button mat-stroked-button color="warm">
+                    <mat-icon aria-hidden="false" aria-label="Edit" fontIcon="add_box"></mat-icon>
+                </button>
+                
+            </th>
+            <td mat-cell *matCellDef="let element" style="width: 150px;">
+                <button mat-flat-button style="background-color: #fcdb00; color: #fff; margin: 0 2px;">
+                    <mat-icon aria-hidden="false" aria-label="Edit" fontIcon="edit_off"></mat-icon>
+                </button>
+                <button mat-flat-button color="warn" (click)="deleteUser(element.userId)">
+                    <mat-icon aria-hidden="false" aria-label="delete" fontIcon="delete"></mat-icon>
+                </button>
+            </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+</div>

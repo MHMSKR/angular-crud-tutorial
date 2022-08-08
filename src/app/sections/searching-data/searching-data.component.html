@@ -1,0 +1,20 @@
+<div class="searching-data">
+    <mat-form-field appearance="fill">
+        <mat-label>ค้นหาโดย</mat-label>
+        <mat-select [(ngModel)] = "this.optionSelected">
+            <mat-option value="userId">รหัสผู้ใช้งาน</mat-option>
+            <mat-option value="fname">ชื่อ</mat-option>
+            <mat-option value="lname">นามสกุล</mat-option>
+            <mat-option value="birthdate">วันเกิด</mat-option>
+            <mat-option value="age">อายุ</mat-option>
+            <mat-option value="gender">เพศ</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>ค้นหาโดย</mat-label>
+        <input type="text" matInput [(ngModel)]="this.optionValue">
+    </mat-form-field>
+
+    <button mat-raised-button class="btn-primary" (click)="searchData()">ค้นหา</button>
+</div>

@@ -1,0 +1,13 @@
+.searching-data{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+button{
+    width: 90px;
+    height: 40px;
+    margin-bottom: 15px;
+}
